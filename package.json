@@ -1,5 +1,6 @@
 {
   "name": "tfjs-reactjs",
+  "homepage": "https://ories.goes2nobel.com/ReactApp/tensorflowjs",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

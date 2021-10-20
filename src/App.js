@@ -6,7 +6,7 @@ import CustomDetection from './CustomDetection';
 function App() {
 	const [camera, showCamera] = useState(false)
 	const [detectType, setDetectType] = useState('coco')
-	const [loadTitle, setLoadTitle] = useState('Realtime Object Detection Using Tensorflow and ReactJS')
+	const [loadTitle, setLoadTitle] = useState('Realtime Object Detection with TensorflowJS and ReactJS')
 
 	const handleChangeDetection = () => {
 		if(detectType === 'coco') setDetectType('custom')
@@ -19,6 +19,11 @@ function App() {
 
 	const handleFinishLoad = (text) => {
 		setLoadTitle(text)
+	}
+
+	const handleStopDetection = () => {
+		showCamera(!camera)
+		setLoadTitle('Realtime Object Detection with TensorflowJS and ReactJS')
 	}
 
 	return (
@@ -42,7 +47,7 @@ function App() {
 				>
 					{detectType === 'coco'? 'Custom Model': 'Coco Model'}
 				</p>
-				<p style={{padding: '10px 25px', backgroundColor: '#7700cf', borderRadius: 10, cursor: 'pointer', marginLeft: 10}} onClick={() => showCamera(!camera)}>
+				<p style={{padding: '10px 25px', backgroundColor: '#7700cf', borderRadius: 10, cursor: 'pointer', marginLeft: 10}} onClick={handleStopDetection}>
 					{camera? 'Stop Detection' : 'Start Detection'}
 				</p>
 			</div>

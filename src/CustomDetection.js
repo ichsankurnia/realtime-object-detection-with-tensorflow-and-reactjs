@@ -46,7 +46,7 @@ function CustomDetection({onLoad, onFinishLoad}) {
                 
                 // Execute prediction
                 const obj = await net.executeAsync(resized.expandDims(0))
-                onFinishLoad('')
+                onFinishLoad('Finish load model, reload the page if no one detected or lag!')
     
                 // console.log(await obj[2].array())			// 2 score, 3 box, 5 class
                 

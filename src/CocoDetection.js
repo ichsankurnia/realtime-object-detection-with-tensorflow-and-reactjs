@@ -41,7 +41,7 @@ function CocoDetection({onLoad, onFinishLoad}) {
         // Make Detections
         const obj = await net.detect(video);
         console.log(obj)
-        onFinishLoad('')
+        onFinishLoad('Finish load model, reload the page if no one detected or lag!')
 
         // Draw mesh
         const ctx = canvasRef?.current?.getContext("2d");
